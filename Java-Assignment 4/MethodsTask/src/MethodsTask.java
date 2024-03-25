@@ -1,6 +1,9 @@
+// First thing is to import the scanner
 import java.util.Scanner;
+// Declaring public class and main
 public class MethodsTask {
     public static void main(String[] args) {
+        // Open scanner
         Scanner scanner = new Scanner(System.in);
         // Ask the user to input their first name
         System.out.print("Please enter your first name: ");
@@ -22,25 +25,25 @@ public class MethodsTask {
         System.out.print("Please enter a number to calculate times table and factorial: ");
         // Store the number for the factorial calculation
         int number = scanner.nextInt();
-        // Ask the user the numbers to calculate the exponent
+        // Ask the user the base to calculate the exponent
         System.out.print("Please enter the base to calculate exponent: ");
+        // Store the base in a new double variable
         double base = scanner.nextDouble();
+        // Ask the user for an exponent
         System.out.print("Enter the exponent: ");
+        // Store the exponent as a new integer
         int exponent = scanner.nextInt();
-        System.out.print ("Enter the base of the system: ");
-        int baseSystem = scanner.nextInt();
-
-
         // Call Method#1: printFullName with provided first and last name
         printFullName(userName, userLastName);
         // Call Method#2: getGrade with the two test results and prints the result
-        System.out.println("Based on the marks of your first exam " + userTest1 + " and your second exam, " + userTest2 + "your grade is " + getGrade(userTest1, userTest2));
+        System.out.println("Based on the marks of your first exam " + userTest1 + " and your second exam " + userTest2 + " your grade is " + getGrade(userTest1, userTest2));
         // Call Method#3: printTimesTable of number user will input
         printTimesTable(number);
         // Call Method#4: getFactorial, calculate the factorial of a number user will input
         System.out.println("The factorial of " + number + " is: " + getFactorial(number));
         // Call Method#5: exponent
-        System.out.println(base + " raised to the power of " + exponent + " in base " + baseSystem + " is: " + calculatePower(base, exponent, baseSystem));
+        System.out.println(base + " raised to the power of " + exponent + " is: " + calculatePower(base, exponent));
+        // Closing the scanner
         scanner.close();
     }
     // Method#1: printFullName
@@ -85,24 +88,28 @@ public class MethodsTask {
     }
     // Method#4: getFactorial
     public static int getFactorial(int numberFactorial) {
+        // Declare new int to store the multiplication
         int factorial=1;
+        // Open a FOR to multiply the factorial by i
         for (int i = 1; i <= numberFactorial; i++) {
+            // Keep multiplying until i is minor or equal to numberFactorial
             factorial *= i;
         }
+        // Return the result of the factorial
         return factorial;
     }
     // Method#5: calculatePower
-    public static double calculatePower (double base, int expoent, int baseSystem) {
+    public static double calculatePower (double base, int exponent) {
+        // Declare new double to store the result
         double result = 1.0;
-        for (int i = 0; i < expoent;i++){
+        // Open FOR to keep multiplying as many times aa the exponent
+        for (int i = 0; i < exponent;i++){
+            // Keep multiplying the base by itself until reach exponent value
             result *=base;
         }
+        // Return the result
         return result;
     }       
-    
-
-
-
 }
    
 
